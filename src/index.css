@@ -8,20 +8,24 @@ body{
     margin:0;
     padding:0;
     font-family: sans-serif;
-    /*background: url(/img/org.png)*/
-   /* background: url(/img/org.png);*/
+    background: url(bg.png) no-repeat ;
+   /* background: url(./img/org.png);*/
    /* background-image: url(/img/org.png);*/
-  /* background-image: url(/public/img/bg.png);*/
-   background-size:100%;
+ /* background-image: url(/public/img/bg.png);*/
+  
+  
+  background-size:100%;
    background-position:bottom;
    background-color:wheat;
    min-height: 100%;
 
 }
 
+
+
 form {
   padding: 20px;
-  margin-top: 60px;
+  margin-top: 60px; 
 }
 
 form button, form h5{
