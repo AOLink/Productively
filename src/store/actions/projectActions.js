@@ -11,7 +11,7 @@ export const createProject = (project) => {
         dispatch({ type: 'CREATE_PROJECT', project:project});
 
  }).catch((err) => {
-         dispatch({type: 'CREATE_PROJECT_ERRO', err})
+         dispatch({type: 'CREATE_PROJECT_ERROR', err})
  })
                    
 
