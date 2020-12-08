@@ -35,7 +35,7 @@ const mapStateToProps = (state) => {
         projects: state.project.projects  
     }
 
-}
+} 
 
 
 
