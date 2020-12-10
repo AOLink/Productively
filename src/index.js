@@ -34,7 +34,7 @@ const rrfConfig = {
   reduxFirestore(fbConfig)
   //reactReduxFirebase(fbConfig)
 
-  )
+  ) 
   );
 
 const rffProps = {

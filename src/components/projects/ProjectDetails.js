@@ -4,23 +4,43 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 
 const ProjectDetails = (props) => {
-    const id = props.match.params.id;
-   // console.log(props);
-    return (
-        <div className="container section project-details">
-            <div className="card z-depth-0">
-                <div className="card-content">
-                    <span className="card-title">Title - {id} </span>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum, aliquam! Nisi, quam sed enim, rem, ipsum nostrum veritatis voluptatum omnis aliquid aliquam aut quas a atque labore repellendus et quibusdam?</p>
-                </div>
-                <div className="card-action gret lighten-4 grey-text">
-                    <div>Posted by Me</div>
-                    <div>27th August, 5am</div>
-                </div>
-            </div>
+     //
+    //const id = props.match.params.id;
+   //console.log(props);
+   
+   
+   const { project } = props;
+
+   if (project) {
+
+    return(
+    <div className="container section project-details">
+    <div className="card z-depth-0">
+        <div className="card-content">
+   <span className="card-title">{ project.title }</span>
+   <p>{ project.content }</p>
         </div>
-    )
+        <div className="card-action gret lighten-4 grey-text">
+   <div>Posted by {project.authorFirstName} {project.authorLastName}</div>
+            <div>27th August, 5am</div>
+        </div>
+    </div>
+</div> 
+);
+   } else {
+    return (
+                    <div className="conainer center">
+                        <p>Loading Projects...</p>
+                    </div>
+        )
+   }
+   
+   
+  
 }
+
+//Functions = state
+//classes =
 
 const mapStateToProps = (state, ownProps) => {
     //console.log(state);
@@ -36,6 +56,9 @@ const mapStateToProps = (state, ownProps) => {
 export default compose(
     connect(mapStateToProps),
     firestoreConnect([
-            { collection: 'projects'}
+
+        //object represents what we want to add to our props 
+            { collection: 'projects' }
         ])
 )(ProjectDetails)
+ 

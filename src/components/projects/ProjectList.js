@@ -20,4 +20,4 @@ const ProjectList = ({projects}) => {
     )
 }
 
-export default ProjectList
+export default ProjectList  
