@@ -1,6 +1,6 @@
 import authReducer from './auth'
 
-import projectReducer from './project'
+import projectReducer from './projectReducer'
 
 import { combineReducers } from 'redux'
 

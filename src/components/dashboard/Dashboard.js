@@ -17,7 +17,7 @@ class Dashboard extends Component {
                         <ProjectList projects={projects} />
                     </div>
                         
-                    <div className="col s12 m5 offset-m1">
+                    <div className="col s12 m5 offset-m1"> 
                     <Notifications />
 
                     </div>
@@ -33,6 +33,7 @@ const mapStateToProps = (state) => {
     console.log(state)
     return {
         projects: state.project.projects  
+      //projects: state.firestore.ordered.projects
     }
 
 } 

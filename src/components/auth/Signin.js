@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+//class based components because
+//we want to store in a local state what a user types into the input fields
+
 class Signin extends Component {
     state = {
         email: "",

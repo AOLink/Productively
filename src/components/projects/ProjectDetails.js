@@ -5,7 +5,7 @@ import { compose } from 'redux'
 
 const ProjectDetails = (props) => {
     const id = props.match.params.id;
-    console.log(props);
+   // console.log(props);
     return (
         <div className="container section project-details">
             <div className="card z-depth-0">
