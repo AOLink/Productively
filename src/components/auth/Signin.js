@@ -19,10 +19,11 @@ class Signin extends Component {
     handleSubmit = (e) => {
        
             e.preventDefault();
-            this.props.signIn(this.state)
+            this.props.signIn(this.state);
     
     }
-
+         //                     ---------V Extra space here causes automatic login error
+    //<input type="password" id="password " onChange={this.handleChange} />
     render() {
         const { authError } = this.props;
         return (
@@ -35,7 +36,8 @@ class Signin extends Component {
                     </div>
                     <div className="input-field">
                         <label htmlFor="password">Password</label>
-                        <input type="password" id="password " onChange={this.handleChange} />
+                        
+                        <input type="password" id="password" onChange={this.handleChange} />
                     </div>
                     <div className="input-field">
                         <button className="btn brown lighten-1 z-depth-0">Login</button>
