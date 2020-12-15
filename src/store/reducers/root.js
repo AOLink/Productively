@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
    firebase: firebaseReducer
 
    // fbReducer syncs auth status on fb with our redux app in the state
-   // and pop it on the "firebase: " object
+   // and pop it on the "firebase: " object on the state
 
 })     
 

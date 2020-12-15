@@ -5,22 +5,25 @@ import SignedOutLinks from './SignedOutLinks'
 import { connect } from 'react-redux'
 
 //default exports dont need {} when being imported
-const Navbar = () => {
+const Navbar = (props) => {
+    const { auth } = props;
+    console.log(auth);
+    const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />
     return(
         <nav className="nav-wrapper green darken-3">
         <div className="container">
              <Link to="/"className='brand-logo'>Productively</Link>
-             <SignedInLinks />
-             <SignedOutLinks />
+            { auth.isLoaded && links }
         </div>   
         </nav>
     )
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
+ //   console.log(state);
     return {
-         
+        //object represents things we want to attach to the props
+        auth: state.firebase.auth
     }
 } 
 

@@ -12,7 +12,7 @@ import firebase from './config/fbConfig'
 import { createFirestoreInstance, reduxFirestore, getFirestore } from 'redux-firestore'
 //import { reduxFirestore, getFirestore,  } from 'redux-firestore'
 
-import { ReactReduxFirebaseProvider, getFirebase} from 'react-redux-firebase'
+import { ReactReduxFirebaseProvider, getFirebase, reactReduxFirebase} from 'react-redux-firebase'
 //import { reactReduxFirebase, getFirebase,  } from 'react-redux-firebase'
 import fbConfig from './config/fbConfig'
 
@@ -31,12 +31,17 @@ const rrfConfig = {
   applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore })),
   reduxFirestore(firebase),
  
-  reduxFirestore(fbConfig)
-  //reactReduxFirebase(fbConfig)
+  reduxFirestore(fbConfig),
+  //reactReduxFirebase(fbConfig, { attachAuthIsReady: true})
 
-  ) 
+  )
   );
 
+  /*
+store.firebaseAuthIsReady.then(() => {
+
+})
+*/ 
 const rffProps = {
   firebase,
   useFirestoreForProfile: true,
@@ -44,6 +49,9 @@ const rffProps = {
   dispatch: store.dispatch,
   createFirestoreInstance
 }
+
+
+
 
 ReactDOM.render(
   <React.StrictMode> 

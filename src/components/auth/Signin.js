@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { signIn } from '../../store/actions/authActions'
+import { Redirect } from 'react-router-dom'
+
 
 //class based components because
 //we want to store in a local state what a user types into the input fields
@@ -22,10 +24,12 @@ class Signin extends Component {
             this.props.signIn(this.state);
     
     }
-         //                     ---------V Extra space here causes automatic login error
+         //                     ---------V Extra space here causes automatic login error 
     //<input type="password" id="password " onChange={this.handleChange} />
     render() {
-        const { authError } = this.props;
+        const { authError, auth } = this.props;
+        if (auth.uid) return <Redirect to='/' />
+
         return (
             <div className="container">
                 <form onSubmit={this.handleSubmit} className="white">
@@ -56,7 +60,8 @@ class Signin extends Component {
 // leaving parameter empty leads to a state is not defined error
 const mapStateToProps = (state) => {
     return {
-        authError: state.auth.authError
+        authError: state.auth.authError,
+        auth:      state.firebase.auth
     }
 }
 
