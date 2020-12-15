@@ -15,10 +15,16 @@ class CreateProject extends Component {
         })
     }
     handleSubmit = (e) => {
-       
+        const { auth } = this.props;
+            this.setState({
+                ...this.state,
+                uid: auth.uid
+            },() => {
+                this.props.createProject(this.state)
+
+            })
             e.preventDefault();
            // console.log(this.state)
-           this.props.createProject(this.state)
     
     }
 

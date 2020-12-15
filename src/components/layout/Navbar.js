@@ -20,7 +20,7 @@ const Navbar = (props) => {
 }
 
 const mapStateToProps = (state) => {
- //   console.log(state);
+    console.log(state);
     return {
         //object represents things we want to attach to the props
         auth: state.firebase.auth

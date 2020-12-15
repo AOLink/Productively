@@ -20,6 +20,8 @@ import fbConfig from './config/fbConfig'
   
 import 'firebase/firestore';
 
+
+
 const rrfConfig = {
     userProfile:'projects',
     useFirestoreForProfile: true
@@ -33,9 +35,20 @@ const rrfConfig = {
  
   reduxFirestore(fbConfig),
   //reactReduxFirebase(fbConfig, { attachAuthIsReady: true})
+ //reactReductFirebase(fbConfig,{useFirestoreForProfile:true, userProfile: 'users', attachAuthIsReady: true})
+  
 
   )
   );
+
+  const profileSpecificProps = {
+    userProfile: 'users',
+    useFirestoreForProfile: true,
+    enableRedirectHandling: false,
+    resetBeforeLogin: false
+  }
+
+
 
   /*
 store.firebaseAuthIsReady.then(() => {
@@ -44,6 +57,7 @@ store.firebaseAuthIsReady.then(() => {
 */ 
 const rffProps = {
   firebase,
+
   useFirestoreForProfile: true,
   config: rrfConfig,
   dispatch: store.dispatch,
